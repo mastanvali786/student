@@ -1,0 +1,43 @@
+.banner
+{
+	color: red;
+    
+}
+.header{
+background-color:#3D007A;
+color:white;
+text-align:center;
+padding:5px;
+}
+.body{
+background-color:#FFFFC2;
+color:blue;
+background-image: url('sm.jpeg');
+text-align:center;
+padding:5px;
+}
+.show
+{
+	background-color: #FFFFC2;
+	color:blue;
+}
+#h
+{
+	color:#D6F5D6;
+	text-align:left;
+	font-size:30px;
+	font-style: italic;
+	font-family:"Times New Roman", Times, serif; 
+}
+.footer {
+    background: #D63083;
+    border: 1px solid black;
+    padding: 5px;
+}
+.nav
+{
+	color:#0000E6;
+	font-size: 20px;
+	font-style:bold;
+	font-family:"Times New Roman;
+}

@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+<div class="header">
+<h1>Student Details</h1></div>
+<div class="show">
+
+<p>
+  <strong>Student Name:</strong>
+  <%= @student.student_name %>
+</p>
+ 
+<p>
+  <strong>Student No:</strong>
+  <%= @student.student_no %>
+</p>
+
+<p>
+  <strong>Email Id:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+ <strong>Student Detail:</strong>
+ <%= @student.student_detail %>
+</p>
+
+<p>
+  <strong>Favourite Color:</strong>
+  <%= @student.favourite_color %>
+<p/>
+
+<p>
+  <strong>Is Phone Enabled No Enabled:</strong>
+  <%= @student.is_phone_no_enabled %>
+</p>
+<p>
+<strong> Image</strong>
+<%= @student.image %>
+</p>
+
+
+
+
+<%= image_tag @student.image_url(:thumb) if @student.image? %>
+
+
+
+
+
+</div></p></div>

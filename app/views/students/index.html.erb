@@ -1,0 +1,78 @@
+<div class="container">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand",class="active" href="http://localhost:3000/students/new">Student Registration</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.google.co.in">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="page-header","well","col-md-4">
+<h1> Student Details</h1></div>
+<div class="container">
+  <table class="table table-hover","table-bordered">
+
+<!-- <table border ='3' width=100% border-collapse=collapse>
+ -->
+
+ <tr class= "success">
+    <th>Student Name</th>
+    <th>Student No</th>
+    <th>Email Id</th>
+    <th>Student Details</th>
+    <th>Favourite Color</th>
+    <th>Is Phone  No Enabled</th>
+    <th> Image</th></th>
+    <th colspan="3"></th>
+  </tr>
+
+ 
+  <% @students.each do |student| %>
+  <tbody>
+    <tr class="info">
+      <td><%= student.student_name %></td>
+      <td><%= student.student_no %></td>
+      <td><%= student.email %></td>
+      <td><%= student.student_detail %></td>
+      <td><%= student.favourite_color%></td>
+      <td><%= student.is_phone_no_enabled %></td>
+      <td><%= student.image %></td>
+      
+
+      <td><%= link_to 'Show', student_path(student) %></td>
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td><%= link_to "delete",student_path(student),:method => "delete"%></td>
+    </tr>
+    </tbody>
+  <% end %>
+</table>
+</div>
+
+
+
+
+
+<br><br>
+<p id="h">
+
+<%= will_paginate @students %>
+

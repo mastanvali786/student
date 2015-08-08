@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_name: MyString
+  student_no: 1
+  student_detail: MyText
+  favourite_color: MyString
+  is_phone_no_enabled: false
+
+two:
+  student_name: MyString
+  student_no: 1
+  student_detail: MyText
+  favourite_color: MyString
+  is_phone_no_enabled: false

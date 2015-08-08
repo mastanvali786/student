@@ -1,0 +1,59 @@
+
+<div class="header">
+<h1>Editing the Student</h1></div>
+ 
+<%= form_for :student, url: student_path(@student), method: :patch do |f| %>
+ 
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this student from being saved:
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="body">
+   <p>
+    <%= f.label :student_name %><br>
+    <%= f.text_field :student_name,:autofocus=>"true" %>
+  </p>
+   <p>
+    <%= f.label :email%><br>
+    <%= f.text_field :email %>
+  </p>
+ <p>
+    <%= f.label :student_no %><br>
+    <%= f.text_field :student_no %>
+  </p>
+ 
+  <p>
+    <%= f.label :student_detail %><br>
+    <%= f.text_area :student_detail %>
+  </p>
+  <p>
+    <%= f.label :favourite_color %><br>
+
+    <%= f.select(:favourite_color, ['red' ,'blue','green'],:prompt => 'Select') %>
+  </p>
+<p>
+    <%= f.label :is_phone_no_enabled %><br>
+    <%= f.check_box :is_phone_no_enabled %>
+  </p>
+
+<p>
+    <%= f.label :Image%><br>
+    <%= f.file_field :image %>
+  </p>
+  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<%end%>
+<%= link_to 'Back', student_path %></div>

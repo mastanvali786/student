@@ -1,0 +1,84 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var r= $('#theFieldID').attr("nisha");
+         $('#theFieldID').focus();
+  });
+  $(document).ready(function(){
+    $("m").click(function(){
+        $(this).hide();
+    });
+});
+
+</script>
+
+<%= form_for :student, :url => {:action => "create"},:html => {:multipart => "true"},:html=>{:onsubmit=>"confirmInput();"} do |f| %>
+ 
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this student from being saved:
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class ="header">
+<h1>New Student Details</h1><br><br></div>
+<div class="body">
+  <fieldset><p>
+    <%= f.label :student_name  %><br>
+    <%= f.text_field :student_name,:autofocus=>"SetFocus()",:id=>"theFieldID",:id=>"fname",:onblur=>"myfunction()" ,:onfocus=>"MyFunction(this)",:placeholder=>"Enter Name"%>
+  </p>
+
+   <p>
+    <%= f.label :email%><br>
+    <%= f.text_field :email,:placeholder=>"Enter Mail Id" %>
+  </p>
+ <p>
+    <%= f.label :student_no%><br>
+    <%= f.text_field :student_no,:onfocus=>"MyFunction(this)",:placeholder=>"Enter The No"  %>
+  </p>
+ 
+  <p>
+    <%= f.label :student_detail %><br>
+    <%= f.text_area :student_detail,:onfocus=>"MyFunction(this)" %>
+  </p>
+  <p>
+<%= f.label :favourite_color %><br>
+
+    <%= f.select(:favourite_color, ['red' ,'blue','green'],:prompt => 'Select') %>
+  </p>
+<p>
+    <%= f.label :is_phone_no_enabled%><br>
+    <%= f.check_box :is_phone_no_enabled %>
+  </p>
+
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  
+
+ 
+  <p>
+    <%= f.submit %>
+  </p></fieldset></div>
+  
+  <% end %>
+  <br><br>
+
+<p><m>hi click me</m></p>
+<button onclick="displayDate()">Click here to see the Time</button>
+
+<p id="demo"></p>
+
+
+ 
+  <%#= link_to 'Back', student_path %>
